@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: gestor-restaurantes
+    env: python
+    buildCommand: "./build.sh"
+    startCommand: "gunicorn gestor_restaurantes.wsgi:application"
+    envVars:
+      - key: DEBUG
+        value: False
